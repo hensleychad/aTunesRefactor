@@ -57,19 +57,12 @@ public class ApplicationMenuBar extends JMenuBar {
 	// Edit Menu
 	private JMenuItem editPreferences;
 	
-	// View Menu
-/*	private JMenuItem tagView;
-	private JMenuItem folderView;
-	private JMenuItem favoriteView;
-	private JMenuItem deviceView;
-	private JCheckBoxMenuItem showStatusBar;
-	private JCheckBoxMenuItem showNavigationPanel;
-	private JCheckBoxMenuItem showNavigationTable;
-	private JCheckBoxMenuItem showProperties;
-	private JCheckBoxMenuItem showOSD; */
 	
-	private ApplicationViewMenuModel appViewMenu = new ApplicationViewMenuModel();
-	private ApplicationPlayListMenuModel appPlayListMenu = new ApplicationPlayListMenuModel();
+	// View Menu
+	private ApplicationViewMenuModel appViewMenu;
+	
+	// PlayList Menu
+	private ApplicationPlayListMenuModel appPlayListMenu;
 
 	
 	// Player Menu
@@ -77,31 +70,7 @@ public class ApplicationMenuBar extends JMenuBar {
 	private JMenuItem volumeUp;
 	private JMenuItem mute;
 	
-	/*
 	
-	// PlayList Menu
-	private JMenuItem playListPlay;
-	private JMenuItem playListTags;
-	private JMenuItem playListEditTag;
-	private JMenuItem playListAutoSetTrack;
-	private JMenuItem playListAutoSetGenre;
-	private JMenuItem playListSave;
-	private JMenuItem playListLoad;
-	private JMenuItem playListFilter;
-	private JMenuItem playListInfo;
-	private JMenuItem playListDelete;
-	private JMenuItem playListClear;
-	private JMenuItem playListTop;
-	private JMenuItem playListUp;
-	private JMenuItem playListDown;
-	private JMenuItem playListBottom;
-	private JMenuItem playListFavoriteSong;
-	private JMenuItem playListFavoriteAlbum;
-	private JMenuItem playListFavoriteArtist;
-	private JMenuItem playListArtist;
-	private JMenuItem playListAlbum;
-	private JCheckBoxMenuItem playListShowButtons;
-	*/
 	
 	// Tools Menu
 	private JMenuItem toolsExport;
@@ -126,6 +95,9 @@ public class ApplicationMenuBar extends JMenuBar {
 	
 	private void addMenus() {
 		file = new JMenu(LanguageTool.getString("FILE"));
+		 appViewMenu = new ApplicationViewMenuModel();
+		 appPlayListMenu = new ApplicationPlayListMenuModel();
+
 		selectRepository = new JMenuItem(LanguageTool.getString("SELECT_REPOSITORY"), ImageLoader.FOLDER);
 		file.add(selectRepository);
 		refreshRepository = new JMenuItem(LanguageTool.getString("REFRESH_REPOSITORY"), ImageLoader.REFRESH);
@@ -288,79 +260,15 @@ public class ApplicationMenuBar extends JMenuBar {
 	public JMenuItem getSelectRepository() {
 		return selectRepository;
 	}
-/*
-	public JMenuItem getPlayListBottom() {
-		return playListBottom;
-	}
 
-	public JMenuItem getPlayListClear() {
-		return playListClear;
-	}
-
-	public JMenuItem getPlayListDelete() {
-		return playListDelete;
-	}
-
-	public JMenuItem getPlayListDown() {
-		return playListDown;
-	}
-
-	public JMenuItem getPlayListInfo() {
-		return playListInfo;
-	}
-
-	public JMenuItem getPlayListTop() {
-		return playListTop;
-	}
-
-	public JMenuItem getPlayListUp() {
-		return playListUp;
-	}
-*/
 	public JMenuItem getAboutItem() {
 		return aboutItem;
 	}
-/*
-	public JCheckBoxMenuItem getShowOSD() {
-		return showOSD;
-	}
-*/
+
 	public JMenuItem getExit() {
 		return exit;
 	}
-/*
-	public JCheckBoxMenuItem getShowProperties() {
-		return showProperties;
-	}
 
-	public JCheckBoxMenuItem getShowNavigationTable() {
-		return showNavigationTable;
-	}
-
-	public JMenuItem getPlayListLoad() {
-		return playListLoad;
-	}
-
-	public JMenuItem getPlayListPlay() {
-		return playListPlay;
-	}
-
-	public JMenuItem getPlayListSave() {
-		return playListSave;
-	}
-
-	public JMenuItem getPlayListFavoriteAlbum() {
-		return playListFavoriteAlbum;
-	}
-
-	public JMenuItem getPlayListFavoriteArtist() {
-		return playListFavoriteArtist;
-	}
-
-	public JMenuItem getPlayListFavoriteSong() {
-		return playListFavoriteSong;
-	}
-*/
 	public JMenuItem getRefreshRepository() {
 		return refreshRepository;
 	}
@@ -388,43 +296,12 @@ public class ApplicationMenuBar extends JMenuBar {
 	public JRadioButtonMenuItem getDeviceViewByTag() {
 		return deviceViewByTag;
 	}
-/*
-	public JMenuItem getDeviceView() {
-		return deviceView;
-	}
 
-	public JMenuItem getFavoriteView() {
-		return favoriteView;
-	}
-
-	public JMenuItem getFolderView() {
-		return folderView;
-	}
-
-	public JMenuItem getTagView() {
-		return tagView;
-	}
-
-	public JCheckBoxMenuItem getShowNavigationPanel() {
-		return showNavigationPanel;
-	}
-
-	public JMenuItem getPlayListAlbum() {
-		return playListAlbum;
-	}
-
-	public JMenuItem getPlayListArtist() {
-		return playListArtist;
-	}
-*/
 	public JMenuItem getRipCd() {
 		return ripCd;
 	}
 
-/*	public JCheckBoxMenuItem getPlayListShowButtons() {
-		return playListShowButtons;
-	}
-*/
+
 	public JMenuItem getEditPreferences() {
 		return editPreferences;
 	}
@@ -432,35 +309,15 @@ public class ApplicationMenuBar extends JMenuBar {
 	public JMenu getRecentRepositories() {
 		return recentRepositories;
 	}
-/*
-	public JCheckBoxMenuItem getShowStatusBar() {
-		return showStatusBar;
-	}
 
-	public JMenuItem getPlayListEditTag() {
-		return playListEditTag;
-	}
-*/
 	public JMenuItem getStats() {
 		return stats;
 	}
 
-	/*public JMenuItem getPlayListFilter() {
-		return playListFilter;
-	}
-*/
 	public JMenuItem getCheckUpdates() {
 		return checkUpdates;
 	}
-/*
-	public JMenuItem getPlayListAutoSetGenre() {
-		return playListAutoSetGenre;
-	}
 
-	public JMenuItem getPlayListAutoSetTrack() {
-		return playListAutoSetTrack;
-	}
-*/
 	public JMenuItem getVolumeDown() {
 		return volumeDown;
 	}
